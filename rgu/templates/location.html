@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Location</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+    font-family: sans-serif;
+   
+}
+* {
+    box-sizing: border-box;
+}
+
+.input-container {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+
+}
+
+.fas{
+  padding: 10px;
+  background: #04AA6D;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid #04AA6D;
+}
+
+.btn {
+  background-color:#04AA6D;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+select{
+  width: 90%;
+}
+</style>
+<script src="https://kit.fontawesome.com/e6588f7d41.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<form action="{% url 'select' %}" style="max-width:500px;margin:auto">
+  <h2>Enter Your Location</h2>
+  <div class="input-container">
+    <i class="fas fa-map-marker-alt"></i>
+    <select id="Pick-up location" name="pickup">
+      <option value="Area1">Area1</option>
+      <option value="Arae2">Area2</option>
+      <option value="Area3">Area3</option>
+      <option value="Area4">Area4</option>
+      <option value="Area5">Area5</option>
+    </select>
+    <!--input class="input-field" type="text" placeholder="Enter pick-up location" name="pickup"-->
+  </div>
+
+  <div class="input-container">
+    <i class="fas fa-map-marker-alt"></i>
+    <select id="Drop Point" name="drop">
+      <option value="Location1">Location1</option>
+      <option value="Location2">Location2</option>
+      <option value="Location3">Location3</option>
+      <option value="Location4">Location4</option>
+      <option value="Location5">Location5</option>
+    </select>
+    <!--input class="input-field" type="text" placeholder="Enter drop point" name="drop"-->
+  </div>
+  <button type="submit" class="btn">Order Ride</button>
+</form>
+
+</body>
+</html>

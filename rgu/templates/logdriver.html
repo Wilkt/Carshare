@@ -1,0 +1,107 @@
+{% load static %}  
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family:sans-serif;
+    background-color: #fff;
+    height: 100vh;
+    overflow:hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 16px;
+    background-color: white;
+}
+
+.container h1{
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid silver;
+}
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.loginbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  opacity: 0.9;
+  position: fixed;
+  left: 30%;
+}
+
+.loginbtn:hover {
+  opacity: 1;
+}
+.signup{
+    text-align: center;
+}
+a {
+  color: dodgerblue;
+}
+
+</style>
+</head>
+<body>
+
+<form method="POST">
+  {% csrf_token %}
+  <div class="container">
+      <h1>Login</h1>
+  <table>
+      <tr>
+        <td><label for="email"><b>Username</b></label></td>
+        <td><input type="text" placeholder="Enter Email" name="Email" id="email"  size="34" required></td>
+      </tr>
+
+      <tr>
+        <td><label for="psw"><b>Password</b></label></td>
+        <td><input type="password" placeholder="Enter Password" name="Pass" id="psw" required></td>
+      </tr>
+      <tr>
+        <td><a href="{% url 'home' %}"><button type="submit" class="loginbtn">Login</button><br><br><br><br></a></td>
+      </tr>
+</table>
+{% if messages %}
+{% for msg in messages %}
+<h4>{{msg}}</h4>
+{% endfor %}
+{% endif %}
+<br><br><br>
+<div class="signup">
+    <p> Don't have an account? <a href="{% url 'home' %}">Sign Up</a> </p>
+</div>
+
+</form>
+</body>
+</html>

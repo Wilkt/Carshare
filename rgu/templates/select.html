@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Add icon library -->
+<!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"-->
+<style>
+body {
+    font-family: sans-serif;
+}
+* {
+    box-sizing: border-box;
+}
+
+.input-container {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.fas{
+  padding: 10px;
+  background: #04AA6D;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid #04AA6D;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color:#04AA6D;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+.select{
+    border: 1px solid black;
+    margin-top: 100px;
+    margin-bottom: px;
+    margin-right: 150px;
+    margin-left: 468px;
+    background-color: #3b3b3b;
+    width: 31%;
+}
+</style>
+<script src="https://kit.fontawesome.com/e6588f7d41.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<form action="/action_page.php" style="max-width:500px;margin:auto">
+  <h2>Enter Your Location</h2>
+  <div class="input-container">
+    <i class="fas fa-map-marker-alt"></i>
+    <input class="input-field" type="text" placeholder="Area1" name="pickup">
+  </div>
+
+  <div class="input-container">
+    <i class="fas fa-map-marker-alt"></i>
+    <input class="input-field" type="text" placeholder="Area2" name="drop">
+  </div>
+
+</form>
+
+<div class="select">
+    <i class="fas fa-credit-card"></i><br><br>
+
+        <a href="{% url 'payment' %}"><button type="submit" class="btn">Select Ride</button></a>
+</div>
+</body>
+</html>
